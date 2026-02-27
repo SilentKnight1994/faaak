@@ -1,6 +1,7 @@
 const vscode = require('vscode');
 const { exec } = require('child_process');
 const fs = require('fs');
+const path = require('path');
 
 let statusBarItem;
 
@@ -13,8 +14,12 @@ async function playFaaak() {
   const phrase = config.get('phrase', 'Faaak!');
   const volume = config.get('volume', 1.0);
 
+  const bundledSound = path.join(__dirname, '..', 'faaah.mp3');
+
   if (customSoundPath && fs.existsSync(customSoundPath)) {
     playCustomSound(customSoundPath, volume, phrase);
+  } else if (fs.existsSync(bundledSound)) {
+    playCustomSound(bundledSound, volume, phrase);
   } else {
     playTTS(phrase, volume);
   }
@@ -31,7 +36,7 @@ function playCustomSound(filePath, volume, phrase) {
   if (platform === 'darwin') {
     cmd = `afplay "${filePath}"`;
   } else if (platform === 'win32') {
-   cmd = `powershell -NoProfile -Sta -Command "Add-Type -AssemblyName presentationCore; $mp = New-Object System.Windows.Media.MediaPlayer; $mp.Open([Uri]'file:///${normalizedPath}'); $mp.Play(); Start-Sleep -s 4"`;
+    cmd = `powershell -NoProfile -Sta -Command "Add-Type -AssemblyName presentationCore; $mp = New-Object System.Windows.Media.MediaPlayer; $mp.Open([Uri]'file:///${normalizedPath}'); $mp.Play(); Start-Sleep -s 4"`;
   } else {
     cmd = `ffplay -nodisp -autoexit "${filePath}" 2>/dev/null || aplay "${filePath}" 2>/dev/null || paplay "${filePath}" 2>/dev/null`;
   }

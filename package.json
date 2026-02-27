@@ -3,7 +3,7 @@
   "displayName": "Faaak! 💥 - Test Failure Sound",
   "description": "Plays a sound whenever your tests or tasks fail. Because silence is not an option.",
   "version": "1.0.0",
-  "publisher": "faaak",
+  "publisher": "SilentKnight1994",
   "icon": "icon.png",
   "repository": {
     "type": "git",
