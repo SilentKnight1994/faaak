@@ -1,15 +1,23 @@
 {
   "name": "faaak",
-  "displayName": "Faaak! - Test Failure Sound",
-  "description": "Plays 'Faaak!' whenever your tests fail. Because you need to know.",
+  "displayName": "Faaak! 💥 - Test Failure Sound",
+  "description": "Plays a sound whenever your tests or tasks fail. Because silence is not an option.",
   "version": "1.0.0",
   "publisher": "faaak",
-
+  "icon": "icon.png",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/SilentKnight1994/faaak"
+  },
+  "bugs": {
+    "url": "https://github.com/SilentKnight1994/faaak/issues"
+  },
+  "homepage": "https://github.com/SilentKnight1994/faaak#readme",
   "engines": {
     "vscode": "^1.74.0"
   },
   "categories": ["Other"],
-  "keywords": ["test", "sound", "audio", "fail", "funny"],
+  "keywords": ["test", "sound", "audio", "fail", "funny", "tts", "notification"],
   "activationEvents": ["onStartupFinished"],
   "main": "./src/extension.js",
   "contributes": {
