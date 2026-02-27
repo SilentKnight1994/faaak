@@ -1,0 +1,60 @@
+{
+  "name": "faaak",
+  "displayName": "Faaak! - Test Failure Sound",
+  "description": "Plays 'Faaak!' whenever your tests fail. Because you need to know.",
+  "version": "1.0.0",
+  "publisher": "faaak",
+
+  "engines": {
+    "vscode": "^1.74.0"
+  },
+  "categories": ["Other"],
+  "keywords": ["test", "sound", "audio", "fail", "funny"],
+  "activationEvents": ["onStartupFinished"],
+  "main": "./src/extension.js",
+  "contributes": {
+    "configuration": {
+      "title": "Faaak!",
+      "properties": {
+        "faaak.volume": {
+          "type": "number",
+          "default": 1.0,
+          "minimum": 0.0,
+          "maximum": 1.0,
+          "description": "Volume of the faaak sound (0.0 to 1.0)"
+        },
+        "faaak.enabled": {
+          "type": "boolean",
+          "default": true,
+          "description": "Enable or disable the Faaak! sound"
+        },
+        "faaak.customSoundPath": {
+          "type": "string",
+          "default": "",
+          "description": "Path to a custom sound file (.wav or .mp3). Leave empty to use built-in TTS."
+        },
+        "faaak.phrase": {
+          "type": "string",
+          "default": "Faaak!",
+          "description": "The phrase to speak when tests fail (used when no custom sound is set)"
+        }
+      }
+    },
+    "commands": [
+      {
+        "command": "faaak.test",
+        "title": "Faaak!: Test the sound"
+      },
+      {
+        "command": "faaak.toggle",
+        "title": "Faaak!: Toggle on/off"
+      }
+    ]
+  },
+  "scripts": {
+    "package": "npx @vscode/vsce package"
+  },
+  "devDependencies": {
+    "@vscode/vsce": "^2.22.0"
+  }
+}
