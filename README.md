@@ -3,7 +3,7 @@
 > **Plays a sound out loud whenever your tests or tasks fail.**  
 > Because staring at red text in silence is not enough.
 
-![Faaak! in action](https://raw.githubusercontent.com/YOUR_GITHUB_USERNAME/faaak/main/icon.png)
+![Faaak! in action](https://raw.githubusercontent.com/SilentKnight1994/faaak/main/icon.png)
 
 ---
 
@@ -94,7 +94,7 @@ Then run with `Ctrl+Shift+P` → `Run Test Task`.
 
 ## 🤝 Contributing
 
-Found a bug or want a feature? Open an issue on [GitHub](https://github.com/YOUR_GITHUB_USERNAME/faaak/issues).
+Found a bug or want a feature? Open an issue on [GitHub](https://github.com/SilentKnight1994/faaak/issues).
 
 ---
 
